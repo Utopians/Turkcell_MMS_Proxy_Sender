@@ -8,6 +8,7 @@ TEKNOmart<br />
 <a href='www.mesajservisi.com' target='_blank'>www.mesajservisi.com</a>
 
 paket.xml<br />
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <SubmitReq xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3">
 <MM7Version>5.6.0</MM7Version>
@@ -25,9 +26,10 @@ paket.xml<br />
 </Recipients>
 <Subject>TEST</Subject>
 </SubmitReq>
-
+```
 content_folder:<br />
 smil.smil file:<br />
+```
 <?xml version="1.0" encoding="utf-8"?>
 <smil>
 <head>
@@ -41,3 +43,4 @@ smil.smil file:<br />
 </par>
 </body>
 </smil>
+```
