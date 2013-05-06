@@ -61,6 +61,7 @@ public class Main {
         String returnMMSId = null;
         String returnXML = null;
         try {
+            // parametre yoksa hata veriyor!
             String icerik = args[1];
 
             SubmitReqServiceLocator locator = new SubmitReqServiceLocator();
