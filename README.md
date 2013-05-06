@@ -3,11 +3,11 @@ Turkcell_MMS_Proxy_Sender
 
 java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml content_folder
 
-Recep Cinet
-TEKNOmart
-<a href='www.teknomart.com.tr'>www.teknomart.com.tr</a>
+Recep Cinet<br />
+TEKNOmart<br />
+<a href='www.mesajservisi.com' target='_blank'>www.mesajservisi.com</a>
 
-paket.xml
+paket.xml<br />
 <?xml version="1.0" encoding="UTF-8"?>
 <SubmitReq xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3">
 <MM7Version>5.6.0</MM7Version>
@@ -25,3 +25,19 @@ paket.xml
 </Recipients>
 <Subject>TEST</Subject>
 </SubmitReq>
+
+content_folder:<br />
+smil.smil file:<br />
+<?xml version="1.0" encoding="utf-8"?>
+<smil>
+<head>
+<layout>
+<region id="icerik" top="0" left="0" height="100%" width="100%" fit="meet" />
+</layout>
+</head>
+<body>
+<par dur="15">
+<video src="test.3gp" region="icerik" />
+</par>
+</body>
+</smil>
