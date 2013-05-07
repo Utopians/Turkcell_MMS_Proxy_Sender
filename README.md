@@ -27,7 +27,7 @@ paket.xml (Turkcell'in istedigi XML yapisi)<br />
 <Subject>TEST</Subject>
 </SubmitReq>
 ```
-content_folder: (Bazi telefonlar icin mutlaka smil dosyasina saniye girmelisiniz, mesela Samsung Galaxy S3'lerde smil dosyasi olmazsa videolarin yarim kesebiliyor.)<br />
+content_folder: (Bazi telefonlar icin mutlaka smil dosyasina saniye girmelisiniz (par dur=15), mesela Samsung Galaxy S3'lerde smil dosyasi olmazsa videolarin yarim kesebiliyor.)<br />
 smil.smil file:<br />
 ```
 <?xml version="1.0" encoding="utf-8"?>
