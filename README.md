@@ -7,7 +7,7 @@ Recep Cinet<br />
 TEKNOmart<br />
 <a href='www.mesajservisi.com' target='_blank'>www.mesajservisi.com</a>
 
-paket.xml<br />
+paket.xml (Turkcell'in istedigi XML yapisi)<br />
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <SubmitReq xmlns="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3gpp.org/ftp/Specs/archive/23_series/23.140/schema/REL-5-MM7-1-3">
@@ -27,7 +27,7 @@ paket.xml<br />
 <Subject>TEST</Subject>
 </SubmitReq>
 ```
-content_folder:<br />
+content_folder: (Bazi telefonlar icin mutlaka smil dosyasina saniye girmelisiniz, mesela Samsung Galaxy S3'lerde smil dosyasi olmazsa videolarin yarim kesebiliyor.)<br />
 smil.smil file:<br />
 ```
 <?xml version="1.0" encoding="utf-8"?>
