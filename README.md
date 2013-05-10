@@ -1,7 +1,8 @@
 Turkcell_MMS_Proxy_Sender
 =========================
 
-java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml content_folder
+java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml Path+icerik_klasoru
+paket.xml, icerik_klasorunun icinde olmali ve parametrede path belirtilmemeli;
 
 Recep Cinet<br />
 TEKNOmart<br />
@@ -27,7 +28,7 @@ paket.xml (Turkcell'in istedigi XML yapisi)<br />
 <Subject>TEST</Subject>
 </SubmitReq>
 ```
-content_folder: (Bazi telefonlar icin mutlaka smil dosyasina saniye girmelisiniz (par dur=15), mesela Samsung Galaxy S3'lerde smil dosyasi olmazsa videolarin yarim kesebiliyor.)<br />
+icerik_klasoru: (Bazi telefonlar icin mutlaka smil dosyasina saniye girmelisiniz (par dur=15), mesela Samsung Galaxy S3'lerde smil dosyasi olmazsa videolarin yarim kesebiliyor.)<br />
 smil.smil file:<br />
 ```
 <?xml version="1.0" encoding="utf-8"?>
