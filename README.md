@@ -1,7 +1,7 @@
 Turkcell_MMS_Proxy_Sender
 =========================
 
-java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml Path+icerik_klasoru
+java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml Path+icerik_klasoru<br />
 paket.xml, icerik_klasorunun icinde olmali ve parametrede path belirtilmemeli;
 
 Recep Cinet<br />
