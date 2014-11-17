@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<smil>
+<head>
+<layout>
+<region id="icerik" top="0" left="0" height="100%" width="100%" fit="meet" />
+</layout>
+</head>
+<body>
+<par dur="15">
+<video src="test.3gp" region="icerik" />
+</par>
+</body>
+</smil>
