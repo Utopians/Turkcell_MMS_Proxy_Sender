@@ -92,28 +92,25 @@ public class Main {
             locator.setSubmitReqPortEndpointAddress("http://stargate.turkcell.com.tr/Mmsgroup/services/SubmitReq");
             SubmitReqBindingStub port = (SubmitReqBindingStub) locator.getSubmitReqPort();
             AttachmentPart part;
-            String smilpath = folder + "smil.smil";
-            part = new AttachmentPart(new DataHandler(new FileDataSource(new File(smilpath))));
+            part = new AttachmentPart(new DataHandler(new FileDataSource(new File(folder,"smil.smil"))));
             part.addMimeHeader("Content-Disposition","attachment; filename=smil.smil");
             part.setContentType("application/smil;");
             port.addAttachment(part);
 
-
-            //.contains(yourChar)
             for (File file : files) {
                 String filename = file.getName();
-                int xmldenfarkli = filename.indexOf(".xml");
-                if (!exists(IgnoredFiles, filename) && xmldenfarkli>-1) {
-                    String fileext = filename.substring(filename.lastIndexOf(".") + 1);
+                boolean isXml = filename.endsWith(".xml");
+                if (!exists(IgnoredFiles, filename.toLowerCase()) && !isXml) {
+                    String fileExtension = filename.substring(filename.lastIndexOf(".") + 1);
                     DataHandler dh = new DataHandler(new FileDataSource(new File(file.getPath())));
-                    FileTypesToSend filetype = new FileTypesToSend(fileext);
+                    FileTypesToSend fileType = new FileTypesToSend(fileExtension);
                     part = new AttachmentPart(dh);
                     part.addMimeHeader("Content-Disposition","attachment; filename=" + filename);
-                    if (fileext.equalsIgnoreCase("txt")) {
+                    if (fileExtension.equalsIgnoreCase("txt")) {
                         String str = new String(part.getContent().toString().getBytes(), "UTF-8");
-                        part.setContent(str, filetype.ContentType);
+                        part.setContent(str, fileType.ContentType);
                     }
-                    part.setContentType(filetype.ContentType);
+                    part.setContentType(fileType.ContentType);
                     port.addAttachment(part);
                 }
             }
@@ -145,30 +142,24 @@ public class Main {
             Document doc = db.parse(is);
             NodeList nodes = doc.getElementsByTagName("Response");
 
-            int uzunluk = nodes.getLength();
-            int nerden = 0;
-            String cikis;
-            if (uzunluk==0)  {
-                System.out.println("NOK," + response.substring(bir1, bir2) + "|" + response.substring(iki1, iki2));
+            int nodeLength = nodes.getLength();
+            String output;
+            if (nodeLength==0)  {
+                exitWithError("NOK," + response.substring(bir1, bir2) + "|" + response.substring(iki1, iki2));
             }
-            else
-            {
-                for (int i = nerden; i < uzunluk; i++) {
-                  Element element = (Element) nodes.item(i);
-                  cikis="";
-                  NodeList name1 = element.getElementsByTagName("Recepient");
-                  Element line = (Element) name1.item(0);
-                  cikis+=getCharacterDataFromElement(line) + "|";
-                  NodeList name2 = element.getElementsByTagName("StatusCode");
-                  line = (Element) name2.item(0);
-                  //System.out.println("StatusCode: " + getCharacterDataFromElement(line));
-                  cikis+=getCharacterDataFromElement(line) + "|";
-                  NodeList title = element.getElementsByTagName("StatusText");
-                  line = (Element) title.item(0);
-                  //System.out.println("StatusText: " + getCharacterDataFromElement(line));
-                  cikis+=getCharacterDataFromElement(line);
-                  System.out.println(cikis);
-                }
+            for (int i = 0; i < nodeLength; i++) {
+                Element element = (Element) nodes.item(i);
+                output="";
+                NodeList name1 = element.getElementsByTagName("Recepient");
+                Element line = (Element) name1.item(0);
+                output+=getCharacterDataFromElement(line) + "|";
+                NodeList name2 = element.getElementsByTagName("StatusCode");
+                line = (Element) name2.item(0);
+                output+=getCharacterDataFromElement(line) + "|";
+                NodeList title = element.getElementsByTagName("StatusText");
+                line = (Element) title.item(0);
+                output+=getCharacterDataFromElement(line);
+                System.out.println(output);
             }
         } catch (Exception e) {
             e.printStackTrace();
