@@ -40,6 +40,11 @@ public class Main {
   }
 
     public static void main(String[] args) {
+        if(args.length == 0){
+            System.out.println("Parametresiz çağırmayın.");
+            return;
+        }
+
         String hata="";
         try {
             //TODO: parametre yoksa hata veriyor!
