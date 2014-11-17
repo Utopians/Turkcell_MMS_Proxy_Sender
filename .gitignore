@@ -1,3 +1,9 @@
 .DS_Store
+<<<<<<< HEAD
 /dist/
 .DS_Store
+=======
+
+/dist/
+/out/*
+>>>>>>> FETCH_HEAD
