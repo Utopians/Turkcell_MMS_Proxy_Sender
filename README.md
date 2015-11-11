@@ -4,10 +4,6 @@ Turkcell_MMS_Proxy_Sender
 java -jar Turkcell_MMS_Proxy_Sender.jar paket.xml Path+icerik_klasoru<br />
 paket.xml, icerik_klasorunun icinde olmali ve parametrede path belirtilmemeli;
 
-Recep Cinet<br />
-TEKNOmart<br />
-<a href='www.mesajservisi.com' target='_blank'>www.mesajservisi.com</a>
-
 paket.xml (Turkcell'in istedigi XML yapisi)<br />
 ```
 <?xml version="1.0" encoding="UTF-8"?>
